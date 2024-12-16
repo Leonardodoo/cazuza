@@ -1,0 +1,1126 @@
+/* Remove margens e preenchimentos padrão de todos os elementos */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Estilos do corpo da página */
+body {
+
+    height: 100%;          /* Faz com que o corpo da página ocupe toda a altura */
+    font-family: Garamond, sans-serif; /* Define a fonte padrão para o corpo da página */
+    color: black; /* Define a cor padrão do texto como preto */
+    background-color: rgb(58, 56, 58); /* Define a cor de fundo da página como um tom escuro de cinza */
+    line-height: normal; /* Define a altura da linha para uma legibilidade equilibrada */
+    margin: 0; /* Remove a margem padrão da página */
+    padding: 0; /* Remove o preenchimento padrão da página */
+
+}
+
+/* Estilos do cabeçalho */
+#header {
+
+    position: relative; /* Define a posição do cabeçalho como relativa para permitir posicionamento absoluto dos elementos filhos */
+    text-align: center; /* Centraliza o texto dentro do cabeçalho */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do cabeçalho */
+    background-position: center; /* Centraliza a posição da imagem de fundo, se houver */
+    color: white; /* Define a cor do texto como branco */
+    height: 100vh; /* Define a altura do cabeçalho para ocupar 100% da altura da janela do navegador */
+
+}
+
+
+/* Seleciona todos os elementos com a classe “fade-in */
+.fade-in {
+
+    width: 100%; /* Faz a imagem cobrir toda a largura do cabeçalho */
+    height: 100%; /* Faz a imagem cobrir toda a altura do cabeçalho */
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    opacity: 1; /* Reduz a opacidade para escurecer levemente */
+    filter: brightness(0.5); /* Escurece a imagem com um brilho reduzido */
+    animation: fadeIn 5s ease-in-out forwards;; /* Aplica a animação fadeIn ao elemento, 
+    com duração de 5 segundos e mantendo o estado final da animação. */
+}
+
+/* Animação para a classe fade-in */
+@keyframes fadeIn {
+
+    to {
+        opacity: 1; /* Define o estado final da animação, onde a imagem estará totalmente opaca */
+    }
+
+}
+
+.text-container {
+
+    position: absolute;
+    top: calc(15% + 0px); /* Ajuste dinâmico para estar abaixo da nav */
+    transform: translateX(-50%);
+    left: 12.5%;
+    display: flex;
+    flex-direction: column; /* Coloca os textos um abaixo do outro */
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    max-width: 75%; /* Limita a largura da caixa a 75% da largura da tela, para não ocupar muito espaço */
+    color: white;
+    text-align: center;
+    animation: fallIncont 3s forwards; /* Aplica a animação no container */
+    padding-top: 1rem;
+
+}
+
+/* Animação para o container de texto */
+@keyframes fallIncont {
+    0% {
+        opacity: -1;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de texto */
+.text-container h1 {
+    font-size: 5vw;
+}
+
+.text-container h2 {
+    font-size: 3vw;
+}
+
+.text-container h6 {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1200px) {
+    .fade-in {
+        object-position: 75%; /* Move a imagem para a direita em telas menores */
+        filter: brightness(0.3); /* Escurece a imagem com um brilho reduzido */
+    }
+    .text-container {
+        top: calc(10% + 0px); /* Novo valor para dispositivos móveis */
+    }
+    .text-container h1 {
+        font-size: 3rem;
+    }
+    .text-container h2 {
+        font-size: 2rem;
+    }
+    .text-container h6 {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1000px) {
+    .fade-in {
+        object-position: 75%; /* Move a imagem para a direita em telas menores */
+        filter: brightness(0.3); /* Escurece a imagem com um brilho reduzido */
+    }
+    .text-container {
+        top: calc(15% + 0px); /* Novo valor para dispositivos móveis */
+    }
+    .text-container h1 {
+        font-size: 4.25rem;
+    }
+    .text-container h2 {
+        font-size: 2.75rem;
+    }
+    .text-container h6 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 840px) {
+    .fade-in {
+        object-position: 75%; /* Move a imagem para a direita em telas menores */
+        filter: brightness(0.3); /* Escurece a imagem com um brilho reduzido */
+    }
+    .text-container {
+        top: calc(15% + 0px); /* Novo valor para dispositivos móveis */
+    }
+    .text-container h1 {
+        font-size: 4rem;
+    }
+    .text-container h2 {
+        font-size: 2.5rem;
+    }
+    .text-container h6 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 540px) {
+    .fade-in {
+        object-position: 75%; /* Move a imagem para a direita em telas menores */
+        filter: brightness(0.3); /* Escurece a imagem com um brilho reduzido */
+    }
+    .text-container {
+        top: calc(5% + 0px); /* Novo valor para dispositivos móveis */
+    }
+    .text-container h1 {
+        font-size: 3rem;
+    }
+    .text-container h2 {
+        font-size: 2rem;
+    }
+    .text-container h6 {
+        font-size: 1rem;
+    }
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 420px) {
+    .fade-in {
+        object-position: 75%; /* Move a imagem para a direita em telas menores */
+        filter: brightness(0.3); /* Escurece a imagem com um brilho reduzido */
+    }
+    .text-container {
+        top: calc(10% + 0px); /* Novo valor para dispositivos móveis */
+    }
+    .text-container h1 {
+        font-size: 2rem;
+    }
+    .text-container h2 {
+        font-size: 1.5rem;
+    }
+    .text-container h6 {
+        font-size: 0.8rem;
+    }
+}
+
+/* Estilo da barra de navegação */
+.navbar {
+
+    position: absolute; /* Posiciona a navegação de forma absoluta no cabeçalho */
+    display: flex; 
+    flex-wrap: nowrap; /* Mantém os botões em uma única linha */
+    width: 100%; /* Faz a navegação ocupar toda a largura do cabeçalho */
+    max-width: 100vw; /* Limita a largura ao tamanho da tela */
+    bottom: 0;
+    z-index: 2; /* Garante que a navegação esteja sobre a imagem de fundo */
+    text-align: center; /* Centraliza o conteúdo da navegação */
+    background-color: rgb(0, 0, 0);
+    padding: 0.5vw 7vw; /* Adiciona padding lateral para centralização visual */
+    gap: 1.8vw; /* Gap proporcional para que o espaço entre os botões ajuste */
+    scrollbar-width: thin; /* (Opcional) Define uma barra de rolagem mais fina nos navegadores compatíveis */
+    overflow-x: auto; /* Adiciona uma barra de rolagem horizontal se o conteúdo exceder a altura máxima */
+
+}
+
+/* Botões de navegação */
+.navbar button {
+
+    background-color: #222;
+    color: white;
+    border: 2px solid #343531;
+    padding: 15px 25px;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-shrink: 0; /* Impede que os botões encolham, mantendo seu tamanho original */
+}
+
+/* Estilo para o botão ativo */
+.navbar button.active {
+    background-color: #444;
+    color: white;
+    border: 1px solid #888;
+}
+
+/* Oculta as seções inicialmente */
+.content-section {
+    display: none;
+}
+
+/* Exibe apenas a seção ativa */
+.content-section.active {
+    display: block;
+    padding: 40px;
+    color: black;
+    background-color: white;
+}
+
+/* Ajuste adicional para dispositivos menores */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 1vw 1.5vw;
+        gap: 0.5vw;
+    }
+
+    .navbar button {
+        padding: 1vw;
+        font-size: 2.5vw;
+    }
+}
+
+/* Ajuste adicional para dispositivos menores */
+@media (max-width: 1000px) {
+    .navbar {
+        padding: 1vw 1.5vw;
+        gap: 0.5vw;
+    }
+
+    .navbar button {
+        padding: 1vw;
+        font-size: 3.5vw;
+    }
+}
+
+/* Ajuste adicional para dispositivos menores */
+@media (max-width: 420px) {
+    .navbar {
+        padding: 2vw 2vw;
+        gap: 0vw;
+    }
+
+    .navbar button {
+        padding: 1px 2px; /* Reduz o tamanho dos botões para caber na tela menor */
+        font-size: 3.5vw;
+    }
+}
+
+/* Configurações da seção Curiosidades */
+#Biografia {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-bio {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-bio {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxbio 3s forwards;
+
+}
+
+/* Define uma animação chamada infobox */
+@keyframes infoboxbio{
+
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+
+    .info-box-bio {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+
+    .info-box-bio {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+
+    .info-box-bio {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+
+}
+
+/* Configurações da seção Curiosidades */
+#Hits {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-hits {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: cover; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: top; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-hits {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxhits 3s forwards;
+
+}
+
+/* Define uma animação chamada infobox */
+@keyframes infoboxhits{
+
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+
+    .info-box-hits {
+        font-size: 1.2rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+
+    .info-box-hits {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+
+    .info-box-hits {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+
+}
+
+/* Configurações da seção Curiosidades */
+#Discografia {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-disc {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-disc {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxdisc 3s forwards;
+
+}
+
+/* Define uma animação chamada infobox */
+@keyframes infoboxdisc{
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-disc {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-disc {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-disc {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+/* Configurações da seção Curiosidades */
+#Obras {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-obras {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-obras {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxobras 3s forwards;
+
+}
+
+/* Define uma animação chamada infobox */
+@keyframes infoboxobras{
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-obras {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-obras {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-obras {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+/* Configurações da seção Influência */
+#Influência {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-inf {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: top; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-inf {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxinf 3s forwards; /* Aplica a animação 'infoboxinf' para a caixa aparecer suavemente na tela */
+
+}
+
+/* Define uma animação chamada infoboxinf */
+@keyframes infoboxinf {
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-inf {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-inf {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-inf {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+/* Configurações da seção Músicas */
+#Galeria {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-gal {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: top; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-gal {
+
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    gap: 10px;
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxgal 3s forwards; /* Aplica a animação 'infoboxinf' para a caixa aparecer suavemente na tela */
+
+}
+
+/* Estilo das fotos */
+.info-box-gal img {
+    width: 100%;
+    height: auto; /* Define uma altura fixa */
+    border: 10px solid white; /* Borda branca para dar aparência de "foto antiga" */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombras para dar profundidade */
+    transition: transform 0.3s ease; /* Animação para ampliar ao passar o mouse */
+}
+
+.info-box-gal img:hover {
+    transform: scale(1.05); /* Efeito de zoom */
+    transform-origin: center; /* Centraliza o ponto de zoom */
+}
+
+/* Define uma animação chamada infoboxinf */
+@keyframes infoboxgal {
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-gal {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-gal {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-gal {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+    .info-box-gal img:hover {
+        transform: scale(2.05); /* Efeito de zoom */
+        transform-origin: center; /* Centraliza o ponto de zoom */
+    }
+}
+
+/* Configurações da seção Músicas */
+#Músicas {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-music {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: top; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-music {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 90%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxmusic 3s forwards; /* Aplica a animação 'infoboxinf' para a caixa aparecer suavemente na tela */
+
+}
+
+/* Define uma animação chamada infoboxinf */
+@keyframes infoboxmusic {
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-music {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-music {
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-music {
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+/* Configurações da seção Citações */
+#Citacoes-famosas{
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-cit {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: cover; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-cit {
+
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 50%; /* Limita a largura da caixa a 50% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxcit 3s forwards; /* Aplica a animação 'infoboxinf' para a caixa aparecer suavemente na tela */
+
+}
+
+/* Define uma animação chamada infoboxinf */
+@keyframes infoboxcit {
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-cit {
+        max-width: 80%;
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-cit {
+        max-width: 80%;
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-cit {
+        max-width: 80%;
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+/* Configurações da seção Curiosidades */
+#Curiosidades {
+
+    align-items: center; /* Centraliza verticalmente o conteúdo (info-box) dentro da seção */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo dentro da seção */
+    position: relative; /* Permite posicionar a imagem de fundo e a caixa de informação relativas a esta seção */
+    height: 100vh; /* Faz com que a seção ocupe toda a altura da tela */
+    overflow: hidden; /* Impede que qualquer conteúdo dentro da seção ultrapasse os limites */
+    box-sizing: border-box; /* Inclui padding e borda no cálculo total de largura e altura da seção */
+    height: auto; /* Ajusta a altura automaticamente de acordo com o conteúdo */
+    padding: 50px 0; /* Adiciona espaçamento superior e inferior para manter a caixa centralizada */
+
+}
+
+/* Ajustes para a imagem de fundo */
+.imagem-fundo-curio {
+
+    position: absolute; /* Posiciona a imagem de fundo fora do fluxo normal, para ficar atrás do conteúdo */
+    top: 0; /* Alinha a imagem ao topo da seção */
+    left: 0; /* Alinha a imagem à esquerda da seção */
+    width: 100%; /* Define a largura da imagem para cobrir toda a largura da seção */
+    height: 100%; /* Define a altura da imagem para cobrir toda a altura da seção */
+    object-fit: fill; /* Garante que a imagem preencha toda a área da seção sem distorcer */
+    object-position: center; /* Alinha a imagem ao topo para mostrar primeiro a parte superior */
+    z-index: 1; /* Coloca a imagem de fundo em uma camada inferior ao conteúdo da caixa de informação */
+    opacity: 0.5; /* Define a transparência da imagem em 50%, para um efeito mais escuro */
+    filter: brightness(1); /* Ajusta o brilho da imagem, mantendo-a clara */
+
+}
+
+/* Estilos para a caixa de informações */
+.info-box-curio {
+    position: relative; /* Posiciona a caixa de informação sobre a imagem de fundo */
+    z-index: 2; /* Coloca a caixa de informação em uma camada superior à da imagem */
+    background-color: rgba(255, 255, 255, 0.8); /* Define um fundo semi-transparente para destacar o texto */
+    padding: 20px; /* Adiciona espaçamento interno para o conteúdo dentro da caixa */
+    border-radius: 8px; /* Arredonda os cantos da caixa de informação */
+    max-width: 50%; /* Limita a largura da caixa a 90% da largura da tela, para não ocupar muito espaço */
+    max-height: 80vh; /* Limita a altura da caixa a 80% da altura da tela, para que caiba melhor em telas menores */
+    overflow-y: auto; /* Adiciona uma barra de rolagem vertical se o conteúdo exceder a altura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    text-align: left; /* Centraliza o texto dentro da caixa */
+    width: 80%; /* Define uma largura que caiba bem no layout */
+    border-radius: 8px;
+    animation: infoboxcurio 3s forwards;
+}
+
+/* Define uma animação chamada infoboxinf */
+@keyframes infoboxcurio {
+    0% { /* Estado inicial da animação */
+        transform: translateY(-25%); /* Move a caixa para cima em relação à sua posição final */
+        opacity: 0; /* Deixa a caixa totalmente transparente (invisível) */
+    }
+    100% { /* Estado final da animação */
+        transform: translateY(0); /* Termina na posição final */
+        opacity: 1; /* Define a caixa como totalmente visível */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1000px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-curio {
+        max-width: 80%;
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 840px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 768px */
+    .info-box-curio {
+        max-width: 80%;
+        font-size: 0.9rem; /* Reduz o tamanho da fonte um pouco para melhor visualização */
+        padding: 15px; /* Reduz o espaçamento interno para caber melhor na tela */
+    }
+}
+
+@media (max-width: 480px) { /* Aplica os estilos abaixo apenas em telas com largura máxima de 480px */
+    .info-box-curio {
+        max-width: 80%;
+        font-size: 0.8rem; /* Reduz ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 10px; /* Diminui o espaçamento interno para economizar espaço em telas pequenas */
+    }
+}
+
+footer {
+    clear: both;  /* Garante que o footer não fique sobreposto a outros elementos */
+    background-color: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-container div {
+    margin: 10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer-note {
+    font-size: 14px;
+    margin-top: 10px;
+}
